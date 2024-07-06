@@ -1,0 +1,5 @@
+<div *ngFor="let data of dataApi">
+  <a [routerLink]="[ type== 'series' ? '/series-list/' + data.id +'/comics-list/' : + data.id]"
+  >{{data.title}}</a>
+</div>
+

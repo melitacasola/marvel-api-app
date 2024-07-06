@@ -15,8 +15,6 @@ import { HomeRoutingModule } from './home-routing.module';
     ReactiveFormsModule,
     HomeRoutingModule
   ],
-  // exports: [
-  //   HomeComponent
-  // ]
+
 })
 export class HomeModule { }
