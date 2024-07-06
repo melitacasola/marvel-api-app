@@ -1,0 +1,29 @@
+<p>comic-detail-form works!</p>
+
+<div *ngIf="comic">
+  <h3>{{ comic.title }}</h3>
+  <!-- <img *ngIf="imageUrl" [src]="imageUrl" alt="{{ comic.title }}" /> -->
+
+  <form [formGroup]="comicForm">
+    <div>
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" readonly>
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <input type="text" id="description" formControlName="description" readonly>
+    </div>
+    <div>
+      <label for="creators">Creators</label>
+      <input type="text" id="creators" formControlName="creators" readonly>
+    </div>
+    <div>
+      <label for="date">Date</label>
+      <input type="text" id="date" formControlName="dates" readonly>
+    </div>
+    <div>
+      <label for="prices">Price</label>
+      <input type="text" id="prices" formControlName="price" readonly>
+    </div>
+  </form>
+</div>
