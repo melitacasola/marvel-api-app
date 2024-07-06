@@ -1,15 +1,13 @@
 import { IComics } from "../../../core/interfaces/comics.interface";
 
 export function ImageUtilUrl(comic: IComics): string | undefined {
-  if (comic?.thumbnail.length) {
-    const { path, extension } = comic.thumbnail[0];
+  if (comic?.thumbnail) {
+    const { path, extension } = comic.thumbnail;
     return `${path}.${extension}`;
   }
   return undefined;
 
 }
-
-
 
 export function ComicUtilPrice(comic: IComics): number | undefined {
   if(comic?.prices.length){

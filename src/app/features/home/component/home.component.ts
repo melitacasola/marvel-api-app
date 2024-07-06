@@ -22,19 +22,16 @@ export class HomeComponent {
 
   login(): void {
     console.log(this.loginForm.value);
-
     const { ts, publicKey, privateKey } = this.loginForm.value;
-
     const hash = this.localStorageService.generateHash(ts, privateKey, publicKey);
-
     this.localStorageService.saveHash(hash);
-
     alert('Hash generado y guardado en el almacenamiento local');
+    this.router.navigate(['/series-list']);
   }
   // const loginValue = { ...this.loginForm.value };
   // this.loginService.login(loginValue).subscribe({
   //   next: (_) => {
-  //     this.router.navigate(['/home']);
+  //
   //   },
   //   error: (e) => alert('User not Found'),
   // });

@@ -5,7 +5,7 @@ export interface ISeries {
   thumbnail: {
     path: string;
     extension: string;
-  }[];
+  };
   pageCount: number;
   prices:{
     type: string;

@@ -1,27 +1,26 @@
 <div class="form-container">
-  <div class="bg-blue-200 rounded shadow p-6">
-    <h2 class="text-2xl font-bold text-gray-800 mb-6">Login</h2>
-    <form class="space-y-4"
+  <div>
+    <h2 >Login</h2>
+    <form
     [formGroup]="loginForm"
     (ngSubmit)="login()"
     >
       <div>
-        <label for="ts" class="text-gray-700">TimeStamp</label>
-        <input type="text" id="ts" class="block w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:outline-none" formControlName="ts">
+        <label for="ts" >TimeStamp</label>
+        <input type="text" id="ts" formControlName="ts">
       </div>
       <div>
-        <label for="publicKey" class="text-gray-700">Public Api Key</label>
-        <input type="publicKey" id="publicKey" class="block w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:outline-none" formControlName="publicKey">
+        <label for="publicKey" >Public Api Key</label>
+        <input type="publicKey" id="publicKey"  formControlName="publicKey">
       </div>
       <div>
-        <label for="privateKey" class="text-gray-700">Private Api Key</label>
-        <input type="privateKey" id="privateKey" class="block w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:outline-none" formControlName="privateKey">
+        <label for="privateKey" >Private Api Key</label>
+        <input type="privateKey" id="privateKey" formControlName="privateKey">
       </div>
       <div>
         <button
         type="submit"
-        class="bg-blue-500 text-white rounded px-4 py-2 w-full"
-
+        [disabled]="loginForm.invalid"
         >Login</button>
       </div>
     </form>

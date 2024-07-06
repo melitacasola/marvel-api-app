@@ -5,7 +5,7 @@ export interface IComics {
   thumbnail: {
     path: string;
     extension: string;
-  }[];
+  };
   pageCount: number;
   prices:{
     type: string;

@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { IComics } from '../../../../core/interfaces/comics.interface';
 import { ActivatedRoute } from '@angular/router';
 import { MarvelService } from '../../services/marvel-service.service';
-import { ImageUtilUrl } from '../../../../core/utils/image-util.service';
+
 
 @Component({
   selector: 'app-comic-details',
@@ -23,8 +23,5 @@ export class ComicDetailsComponent implements OnInit{
     });
   }
 
-  getImageUrl(): string | undefined {
-    // console.log(ImageUtilUrl(this.comic));
-    return ImageUtilUrl(this.comic);
-  }
+
 }

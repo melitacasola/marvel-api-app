@@ -16,17 +16,16 @@ export class MarvelService {
   localStorageService = inject(LocalStorageService);
 
   url = environment.apiUrl;
-  hash = this.localStorageService.getHash();
 
   getSeries(): Observable<ISeries[]> {
-    const urlApi = `${this.url}series?ts=1`;
+    const urlApi = `${this.url}series?`;
     return this.http.get<DataApi<ISeries>>(urlApi).pipe(
       map((data) => data.data.results)
     )
   }
 
   getComicsBySeriesId(id:number): Observable<ISeries[]> {
-    const urlApi = `${this.url}series/${id}/comics?ts=1`;
+    const urlApi = `${this.url}series/${id}/comics?`;
     return this.http.get<DataApi<ISeries>>(urlApi).pipe(
       map((data) =>
         data.data.results
@@ -35,7 +34,7 @@ export class MarvelService {
   }
 
   getComicId(id:number): Observable<IComics[]> {
-    const urlApi = `${this.url}comics/${id}?ts=1`;
+    const urlApi = `${this.url}comics/${id}?`;
     return this.http.get<DataApi<IComics>>(urlApi).pipe(
       map((data) => data.data.results)
     )

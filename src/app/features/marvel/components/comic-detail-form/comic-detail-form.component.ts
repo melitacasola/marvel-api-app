@@ -33,13 +33,13 @@ export class ComicDetailFormComponent {
       dates: this.getComicDate(),
     });
 
-    this.imageUrl = this.getImageUrl();
-    console.log(this.imageUrl, 'this.imageUrl');
+    // this.imageUrl = this.getImageUrl();
+    // console.log(this.imageUrl, 'this.imageUrl');
 
   }
 
-  getImageUrl(): string | undefined {
-    return ImageUtilUrl(this.comic);
+  getImageUrl(comic: IComics): string | undefined {
+    return ImageUtilUrl(comic)
   }
 
   getComicPrice(): number | undefined {

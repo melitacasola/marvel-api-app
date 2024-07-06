@@ -16,6 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
     if(hash){
       const httpReq = req.clone({
         params: req.params
+            .set('ts', 1)
             .set('apikey', apiKey)
             .set('hash', hash)
       });

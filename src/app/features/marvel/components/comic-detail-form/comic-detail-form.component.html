@@ -2,7 +2,7 @@
 
 <div *ngIf="comic">
   <h3>{{ comic.title }}</h3>
-  <!-- <img *ngIf="imageUrl" [src]="imageUrl" alt="{{ comic.title }}" /> -->
+  <img *ngIf="comic && getImageUrl(comic)" [src]="getImageUrl(comic)" alt="{{ comic.title }}" />
 
   <form [formGroup]="comicForm">
     <div>
