@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr.css";
+
+.ngx-toastr.success-toast {
+  background-color: #4caf50 !important;
+  color: #fff !important;
+}
+
+.ngx-toastr.error-toast {
+  background-color: #f44336 !important;
+  color: #fff !important;
+}
+
+
+#toast-container {
+  .toast-top-right {
+    top: 1em;
+    right: 1em;
+  }
+}
