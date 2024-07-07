@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ImageUtilUrl } from '../../utils/comic-util.util';
+import { IComics } from '../../../../core/interfaces/comics.interface';
 
 @Component({
   selector: 'app-generic-card',
@@ -11,5 +13,9 @@ export class GenericCardComponent implements OnInit{
 
 
   ngOnInit(): void {}
+
+  getImageUrl(data: IComics): string | undefined {
+    return ImageUtilUrl(data);
+  }
 
 }

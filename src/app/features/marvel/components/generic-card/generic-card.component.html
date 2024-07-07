@@ -1,5 +1,14 @@
-<div *ngFor="let data of dataApi" >
+<!-- <div *ngFor="let data of dataApi" >
   <a [routerLink]="[ type== 'series' ? '/series-list/' + data.id +'/comics-list/' : + data.id]"
   >{{data.title}}</a>
-</div>
+</div> -->
 
+<div *ngFor="let data of dataApi">
+  <a [routerLink]="[ type== 'series' ? '/series-list/' + data.id +'/comics-list/' : + data.id]">
+    <figure [style.--c]="data.color">
+
+      <figcaption>{{data.title}}</figcaption>
+      <img *ngIf="data && getImageUrl(data)" [src]="getImageUrl(data)" [alt]="data.title">
+    </figure>
+  </a>
+</div>

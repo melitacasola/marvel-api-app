@@ -4,7 +4,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { LoadingOverlayComponent } from './loading-overlay/loading-overlay.component';
 import { LoadInterceptor } from './loading-overlay/load.interceptor';
-// import { NotificationInterceptor } from './notification/notification.interceptor';
 import { ErrorInterceptor } from './interceptors/handle-error.interceptor';
 import { NotificationInterceptor } from './notification/notificacion.interceptor';
 

@@ -1,4 +1,3 @@
-<p>comic-detail-form works!</p>
 
 <div *ngIf="comic">
   <h3>{{ comic.title }}</h3>
@@ -11,7 +10,8 @@
     </div>
     <div>
       <label for="description">Description</label>
-      <input type="text" id="description" formControlName="description" readonly>
+      <textarea name="description" id="description" readonly>{{comic.description}}</textarea>
+      <!-- <input type="text" id="description" formControlName="description" readonly> -->
     </div>
     <div>
       <label for="creators">Creators</label>

@@ -25,6 +25,7 @@ export class HomeComponent {
     const { ts, publicKey, privateKey } = this.loginForm.value;
     const hash = this.localStorageService.generateHash(ts, privateKey, publicKey);
     this.localStorageService.saveHash(hash);
+    this.localStorageService.savePublicKey(publicKey);
     alert('Hash generado y guardado en el almacenamiento local');
     this.router.navigate(['/series-list']);
   }

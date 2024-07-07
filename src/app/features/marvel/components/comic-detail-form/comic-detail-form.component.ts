@@ -33,9 +33,6 @@ export class ComicDetailFormComponent {
       dates: this.getComicDate(),
     });
 
-    // this.imageUrl = this.getImageUrl();
-    // console.log(this.imageUrl, 'this.imageUrl');
-
   }
 
   getImageUrl(comic: IComics): string | undefined {

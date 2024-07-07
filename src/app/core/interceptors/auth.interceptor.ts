@@ -11,6 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req : HttpRequest<any>, next : HttpHandler) : Observable<HttpEvent<any>> {
     const hash = this.localStorageService.getHash();
+    // const apiKey!: string | number | boolean = this.localStorageService.getPublicKey();
     const apiKey = environment.publicKey;
 
     if(hash){
