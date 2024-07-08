@@ -1,0 +1,42 @@
+<!-- <div class="d-flex justify-content-center">
+  <img
+    [src]="url"
+    [alt]="alt"
+    class="animate__animated animate__fadeIn"
+    (load)="onLoad()"
+    [ngStyle]="{ display: _loaded ? '' : 'none' }"
+  />
+  <img *ngIf="comic && getImageUrl(comic)"  alt="{{ comic.title }}" />
+
+  <img
+
+    *ngIf="!_loaded"
+    src="assets/loader.svg"
+    alt="loader"
+    height="35"
+    width="35"
+
+  />
+
+</div> -->
+
+<figure >
+  <img
+    [src]="src"
+    [alt]="alt"
+    (load)="onLoad()"
+    class="lazy-image"
+    [ngStyle]="{ display: _loaded ? '' : 'none' }"
+  >
+  <figcaption>{{alt}}</figcaption>
+
+  <img
+    *ngIf="!_loaded"
+    src="assets/loader.svg"
+    alt="loader"
+    height="5"
+    width="5"
+    class="loader-image"
+  />
+</figure>
+

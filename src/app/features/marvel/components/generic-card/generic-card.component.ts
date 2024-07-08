@@ -8,13 +8,14 @@ import { IComics } from '../../../../core/interfaces/comics.interface';
   styleUrl: './generic-card.component.scss'
 })
 export class GenericCardComponent implements OnInit{
-  @Input() dataApi: any[] = [];
+  @Input() dataApi: IComics[] = [];
   @Input() type: "series" | "comics" = "series";
 
 
   ngOnInit(): void {}
 
   getImageUrl(data: IComics): string | undefined {
+    // console.log(ImageUtilUrl(data));
     return ImageUtilUrl(data);
   }
 

@@ -23,7 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     MarvelRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
 
 })
