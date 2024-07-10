@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SeriesListComponent } from './pages/series-list/series-list.component';
 import { ComicsListComponent } from './pages/comics-list/comics-list.component';
 import { ComicDetailsComponent } from './pages/comic-details/comic-details.component';
+import { authGuard } from '../../core/auth-guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
           }
         ]
       },
-    ]
+    ],
 
   }
 ];

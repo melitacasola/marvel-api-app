@@ -26,4 +26,9 @@ export class LocalStorageService {
     return localStorage.getItem('publicApiKey');
   }
 
+  logout() {
+    localStorage.removeItem('marvelHash');
+    localStorage.removeItem('publicApiKey');
+  }
+
 }

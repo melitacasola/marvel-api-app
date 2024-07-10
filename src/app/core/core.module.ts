@@ -6,13 +6,15 @@ import { LoadingOverlayComponent } from './loading-overlay/loading-overlay.compo
 import { LoadInterceptor } from './loading-overlay/load.interceptor';
 import { ErrorInterceptor } from './interceptors/handle-error.interceptor';
 import { NotificationInterceptor } from './notification/notificacion.interceptor';
+import { HeaderComponent } from './pages/header/header.component';
 
 
 
 
 @NgModule({
   declarations: [
-    LoadingOverlayComponent
+    LoadingOverlayComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,9 @@ import { NotificationInterceptor } from './notification/notificacion.interceptor
     { provide: HTTP_INTERCEPTORS, useClass: NotificationInterceptor, multi: true }
 
   ],
-  exports: [LoadingOverlayComponent]
+  exports: [
+    LoadingOverlayComponent,
+    HeaderComponent
+  ]
 })
 export class CoreModule { }

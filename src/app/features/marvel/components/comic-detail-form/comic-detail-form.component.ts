@@ -26,6 +26,7 @@
 
     private initForm() {
       this.comicForm = this.fb.group({
+        id: [this.comic.id],
         title: [this.comic.title],
         description: [this.comic.description],
         pageCount: [this.comic.pageCount],

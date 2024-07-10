@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
+import { authGuard } from './core/auth-guard/auth.guard';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'series-list',
-    loadChildren: () => import('./features/marvel/marvel.module').then(m => m.MarvelModule)
+    loadChildren: () => import('./features/marvel/marvel.module').then(m => m.MarvelModule),
+    canActivate: [authGuard]
   },
   { path: 'error', component: ErrorPageComponent },
   { path: '**', redirectTo: '/error' },
