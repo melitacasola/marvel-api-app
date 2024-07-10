@@ -11,15 +11,15 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req : HttpRequest<any>, next : HttpHandler) : Observable<HttpEvent<any>> {
     const hash = this.localStorageService.getHash();
-    // const apiKey!: string | number | boolean = this.localStorageService.getPublicKey();
-    const apiKey = environment.publicKey;
+    const apiKey = this.localStorageService.getPublicKey();
+    const apikey = environment.publicKey;
 
-    if(hash){
+    if(hash ){
       const httpReq = req.clone({
         params: req.params
-            .set('ts', 1)
-            .set('apikey', apiKey)
-            .set('hash', hash)
+            .append('ts', 1)
+            .append('apikey', apikey)
+            .append('hash', hash)
       });
 
       return next.handle(httpReq);

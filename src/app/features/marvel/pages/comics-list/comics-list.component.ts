@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ComicsListComponent {
   comics: IComics[] = [];
   private routeActive = inject(ActivatedRoute);
+  // _isLoading: boolean = true;
 
   private marvelService = inject(MarvelService);
 
@@ -18,6 +19,7 @@ export class ComicsListComponent {
     const id = +this.routeActive.snapshot.paramMap.get('id')!;
     this.marvelService.getComicsBySeriesId(id).subscribe((data) => {
       this.comics = data;
+      // this._isLoading = false;
     });
   }
 

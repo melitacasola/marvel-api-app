@@ -45,7 +45,6 @@
 //   }
 // }
 
-
 @import 'variables';
 @import 'mixins';
 
@@ -53,13 +52,25 @@ body {
   margin: 0;
   min-height: 100vh;
   background: $background-color;
-  @include centered-grid;
-  grid-auto-flow: column;
+  @include flex-center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  padding: 2rem;
+  background: $primary-color;
+  border-radius: $border-radius;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
 }
 
 figure {
   @include card-styles;
-  width: 350px;
+
   height: 300px;
   &:hover figcaption {
     --_i: 0%;
@@ -86,22 +97,8 @@ figure figcaption {
 
 @supports not (-webkit-mask-clip: text) {
   figure figcaption {
-    // -webkit-mask: none;
     color: $text-color;
   }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  max-width: 800px;
-  margin: auto;
-  background: $primary-color;
-  padding: 2rem;
-  border-radius: $border-radius;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h3, h2 {
@@ -138,9 +135,11 @@ input[type="text"], textarea {
   font-size: 1rem;
   resize: none;
 }
+
 textarea {
   height: 100px;
 }
+
 button {
   padding: 0.75rem 1.5rem;
   border: none;
@@ -165,8 +164,8 @@ button:disabled {
 }
 
 img {
-  width: 450px;
-  height: 350px;
+  // width: 450px;
+  height: 100%;
   object-fit: cover;
   border-radius: $border-radius;
   margin-bottom: 1rem;

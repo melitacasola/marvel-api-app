@@ -15,7 +15,8 @@ import { NotificationInterceptor } from './notification/notificacion.interceptor
     LoadingOverlayComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

@@ -1,26 +1,6 @@
-<!-- <div class="d-flex justify-content-center">
-  <img
-    [src]="url"
-    [alt]="alt"
-    class="animate__animated animate__fadeIn"
-    (load)="onLoad()"
-    [ngStyle]="{ display: _loaded ? '' : 'none' }"
-  />
-  <img *ngIf="comic && getImageUrl(comic)"  alt="{{ comic.title }}" />
 
-  <img
 
-    *ngIf="!_loaded"
-    src="assets/loader.svg"
-    alt="loader"
-    height="35"
-    width="35"
-
-  />
-
-</div> -->
-
-<figure >
+<figure>
   <img
     [src]="src"
     [alt]="alt"
@@ -28,7 +8,7 @@
     class="lazy-image"
     [ngStyle]="{ display: _loaded ? '' : 'none' }"
   >
-  <figcaption>{{alt}}</figcaption>
+  <figcaption>{{ alt }}</figcaption>
 
   <img
     *ngIf="!_loaded"

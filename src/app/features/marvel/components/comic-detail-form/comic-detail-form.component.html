@@ -2,7 +2,6 @@
 <div *ngIf="comic">
   <h3>{{ comic.title }}</h3>
   <img *ngIf="comic && getImageUrl(comic)" [src]="getImageUrl(comic)" alt="{{ comic.title }}" />
-  <!-- <shared-lazy-image [src]="getImageUrl(comic)" [alt]="comic.title" /> -->
 
   <form [formGroup]="comicForm">
     <div>
@@ -11,8 +10,8 @@
     </div>
     <div>
       <label for="description">Description</label>
-      <textarea name="description" id="description" readonly>{{comic.description}}</textarea>
-      <!-- <input type="text" id="description" formControlName="description" readonly> -->
+      <textarea name="description" id="description" readonly>{{comic.description || 'not description'}}</textarea>
+
     </div>
     <div>
       <label for="creators">Creators</label>
@@ -20,7 +19,12 @@
     </div>
     <div>
       <label for="date">Date</label>
-      <input type="text" id="date" formControlName="dates" readonly>
+
+    <input
+      type="text"
+      id="date"
+      [value]="comicForm.get('date')?.value | dateFormatter"
+      readonly>
     </div>
     <div>
       <label for="prices">Price</label>

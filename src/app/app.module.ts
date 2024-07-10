@@ -18,7 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     CoreModule,
     ToastrModule.forRoot({
-      timeOut: 9000,
+      timeOut: 5000,
     })
   ],
   providers: [],

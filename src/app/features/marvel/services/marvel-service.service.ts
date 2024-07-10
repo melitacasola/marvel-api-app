@@ -17,9 +17,10 @@ export class MarvelService {
 
   url = environment.apiUrl;
 
-  getSeries(): Observable<ISeries[]> {
+  getSeries(offset?: number): Observable<ISeries[]> {
+
     const urlApi = `${this.url}series?`;
-    return this.http.get<DataApi<ISeries>>(urlApi).pipe(
+    return this.http.get<DataApi<ISeries>>(urlApi, {params: {offset: offset ?? 0, limit: 8 }}).pipe(
       map((data) => data.data.results)
     )
   }

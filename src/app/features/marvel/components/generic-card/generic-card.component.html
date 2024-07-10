@@ -3,11 +3,30 @@
   >{{data.title}}</a>
 </div> -->
 
-<div *ngFor="let data of dataApi">
-  <a [routerLink]="[ type== 'series' ? '/series-list/' + data.id +'/comics-list/' : + data.id]">
-    <figure>
-      <figcaption>{{data.title}}</figcaption>
-      <img *ngIf="data && getImageUrl(data)" [src]="getImageUrl(data)" [alt]="data.title">
-    </figure>
-  </a>
+<!-- <div *ngFor="let data of dataApi">
+    <a [routerLink]="[ type== 'series' ? '/series-list/' + data.id +'/comics-list/' : + data.id]">
+      <figure>
+        <figcaption>{{data.title}}</figcaption>
+        <img *ngIf="data && getImageUrl(data)" [src]="getImageUrl(data)" [alt]="data.title">
+      </figure>
+    </a>
+  </div> -->
+
+<div class="container">
+
+  <ng-container *ngIf="_isLoading; else templateCard">
+    <shared-lazy-image url="assets/loader.svg" alt="Loading..."></shared-lazy-image>
+  </ng-container>
+
+  <ng-template #templateCard>
+    <ng-container *ngFor="let data of dataApi">
+
+      <figure [routerLink]="[type === 'series' ? '/series-list/' + data.id + '/comics-list/' : data.id]">
+        <figcaption>{{data.title}}</figcaption>
+        <img *ngIf="data && getImageUrl(data)" [src]="getImageUrl(data)" [alt]="data.title">
+      </figure>
+
+
+    </ng-container>
+  </ng-template>
 </div>

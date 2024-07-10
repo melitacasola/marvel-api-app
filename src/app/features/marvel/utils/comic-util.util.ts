@@ -9,15 +9,6 @@ export function ImageUtilUrl(comic: IComics): string | undefined {
 
 }
 
-// export function ImageUtilUrl(data: { thumbnail: { path: string; extension: string; } }): string {
-//   if (data && data.thumbnail) {
-//     console.log(data.thumbnail.path, data.thumbnail.extension);
-
-//     return `${data.thumbnail.path}.${data.thumbnail.extension}`;
-//   }
-//   return '';
-// }
-
 export function ComicUtilPrice(comic: IComics): number | undefined {
   if(comic?.prices.length){
     const { type, price } = comic.prices[0];
@@ -26,7 +17,7 @@ export function ComicUtilPrice(comic: IComics): number | undefined {
   return undefined;
 }
 
-export function ComicUtilDate(comic: IComics): string | undefined {
+export function ComicUtilDate(comic: IComics): Date | undefined {
   if(comic?.dates.length){
     const { type, date } = comic.dates[0];
     return date;

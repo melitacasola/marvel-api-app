@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { LoadService } from './core/loading-overlay/load.service';
 
 @Component({
@@ -6,7 +6,25 @@ import { LoadService } from './core/loading-overlay/load.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent  implements OnInit, AfterViewChecked {
   title = 'marvel-api-app';
+  isLoading: boolean = false;
   loadService = inject(LoadService);
+  private cdRef = inject(ChangeDetectorRef);
+
+  // Inicializamos el valor de isLoading con el valor inicial del servicio
+  ngOnInit(): void {
+    this.isLoading = this.loadService.isLoading;
+  }
+
+  /* Esto verifica si el valor de isLoading ha cambiado después de cambiar de vista. Si ha
+  cambiado, actualiza el valor y llama a detectChanges en el ChangeDetectorRef para forzar que
+  se detecten los cambios */
+  ngAfterViewChecked(): void {
+    if (this.isLoading !== this.loadService.isLoading) {
+      this.isLoading = this.loadService.isLoading;
+      this.cdRef.detectChanges();
+    }
+  }
 }
+

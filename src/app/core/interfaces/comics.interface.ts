@@ -22,6 +22,6 @@ export interface IComics {
   };
   dates:{
     type: string;
-    date: string;
+    date: Date;
   }[];
 }

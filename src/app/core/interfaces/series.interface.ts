@@ -22,6 +22,6 @@ export interface ISeries {
   };
   dates:{
     type: string;
-    date: string;
+    date: Date;
   }[];
 }
