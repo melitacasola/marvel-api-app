@@ -54,7 +54,7 @@ describe('MarvelServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[HttpClientTestingModule],
-      // providers: [MarvelService]
+      providers: [MarvelService]
     });
     service = TestBed.inject(MarvelService);
     httpCtrl = TestBed.inject(HttpTestingController);
@@ -73,7 +73,7 @@ describe('MarvelServiceService', () => {
         }
       });
 
-      const mockHttp = httpCtrl.expectOne(`${service.url}series?`);
+      const mockHttp = httpCtrl.expectOne(`${service.url}series?offset=0&limit=8`);
       expect(mockHttp.request.method).toEqual('GET');
       mockHttp.flush(SERIES_RESPONSE);
   });
@@ -87,7 +87,7 @@ describe('MarvelServiceService', () => {
         }
     });
 
-    const mockHttp = httpCtrl.expectOne(`${service.url}series?`);
+    const mockHttp = httpCtrl.expectOne(`${service.url}series?offset=0&limit=8`);
     const httpRequest = mockHttp.request;
 
     mockHttp.flush("error request", { status: 401, statusText: 'Unathorized access' });
